@@ -9,31 +9,31 @@ def main():
     It displays the interest earned on the savings and CD accounts and updates the balances.
     """
     # Prompt the user to set the savings balance, interest rate, and months for the savings account.
-    savings_balance = float(input("Enter balance of savings account. ")) 
+    savings_balance = float(input("Enter starting balance of savings account. ")) 
     savings_interest = float(input("Enter interest rate of savings account. ")) 
-    savings_months = float(input("Enter the number of months your account will produce intrest. "))
+    savings_months = float(input("Enter number of months your account will accrue intrest. "))
 
     # Call the create_savings_account function and pass the variables from the user.
-    updated_savings_balance, interest_earned = create_savings_account(savings_balance, savings_interest, savings_maturity)
+    if all(var > 0 for var in (savings_balance, savings_interest, savings_months)):
+        updated_savings_balance, interest_earned = create_savings_account(savings_balance, savings_interest, savings_months)
 
     # Print out the interest earned and updated savings account balance with interest earned for the given months.
-    print("Savings Account Summary:")
-    print("Interest Earned: $", format(interest_earned_savings, ',.2f'))
-    print("Updated Savings Account Balance: $", format(updated_balance_savings, ',.2f'))
+    print(f"Your balance after {savings_months} months will be ${updated_savings_balance,.2f}.") 
+    print(f"Interest earned on savings of ${savings_balance:,.2f} will be ${interest_earned:,.f}.")
 
     # Prompt the user to set the CD balance, interest rate, and months for the CD account.
-    cd_balance = float(input("Enter CD balance: "))
-    cd_interest_rate = float(input("Enter CD interest rate: "))
-    cd_months = int(input("Enter the number of months for CD: "))
+    cd_balance = float(input("Enter balance of CD account. "))
+    cd_interest_rate = float(input("Enter interest rate for CD account. "))
+    cd_months = int(input("Enter the number of months account will accrue interst. "))
 
 
     # Call the create_cd_account function and pass the variables from the user.
-    updated_cd_balance, interest_earned = create_cd_account(cd_balance, cd_interest, cd_maturity)
+    if all(var > 0 for var in (cd_balance, cd_interest, cd_months)):
+        updated_cd_balance, interest_earned = create_cd_account(cd_balance, cd_interest, cd_months)
 
     # Print out the interest earned and updated CD account balance with interest earned for the given months.
-    print("CD Account Summary:")
-    print(f"Interest Earned: ${interest_earned_cd:,.2f}")
-    print(f"Updated CD Account Balance: ${updated_balance_cd:,.2f}")
+    print(f"Your final balance after {cd_months} ,months will be ${updated_cd_balance:,.2f}")
+    print(f"Interest earned on original balance of ${cd_balance:,.2f} will be ${interest_earned:,.2f}.")
 
 if __name__ == "__main__":
     # Call the main function.
