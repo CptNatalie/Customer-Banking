@@ -35,3 +35,21 @@ def create_savings_account(balance, interest_rate, months):
 
     # Return the updated balance and interest earned.
     return user_account.balance, user_account.interest 
+    else:
+        error_string = ""
+        if not (type(balance) == float or type(balance) == int):
+            error_string += (f"The balance ({balance}) was not a number.")
+        if not (type(interest_rate) == float or type(interest_rate) == int):
+            error_string += (f"The interest rate entered ({interest_rate}) was not a number.")
+        if not type(months) == int:
+            error_string += (f"The months ({months}) was not an integer.")
+        #The error string is returned with an additional empty quote to maintain output consistency
+        return error_string, " "
+
+if __name__ == "__main__":
+
+    print(create_savings_account(2000,20, 12)
+    print(Returning 3000, 300))
+
+    print(create_savings_account(2000, 'Money', 12)
+    print("Interest rate was not a number.") 

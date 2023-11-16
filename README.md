@@ -3,4 +3,4 @@ Creating a customer banking system that allows users to calculate and track inte
 
 Files
 ### References
-ChatGPT, Xpert Learning Assistant, peer study group created by Brandon McKimmy, then concluded by comparing my final answers to Matt Dipintos repository. 
+ChatGPT and peer study groups were used to create this module challenge.
